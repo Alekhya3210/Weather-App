@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<title></title>
+</head>
+<body ng-controller="myCtrl">
+<input type="button" value="Display Emp Info" ng-click="getEmpInfo();"/>
+<table>
+<tr>
+<td>S.no</td>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Email</td>
+<td>Mobile</td>
+</tr>
+<!--<tr ng-repeat="emp in empinfo">
+<td ng-bind="$index+1"></td>
+<td ng-bind="emp.firstName"></td>
+<td ng-bind="emp.lastname"></td>
+<td ng-bind="emp.email"></td>
+<td ng-bind="emp.mobile"></td>
+</tr>-->
+<tr ng-repeat="emp in empinfo">
+<td ng-bind{{$index+1}}</td>
+<td ng-bind{{emp.firstName}}</td>
+<td ng-bind{{emp.lastname}}</td>
+<td ng-bind{{emp.email}}</td>
+<td ng-bind{{emp.mobile}}</td>
+</tr>
+</table>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+var app = angular.module("myApp",[]);
+app.controller("myCtrl",function ($scope){
+$scope.getEmpInfo = function (){
+    $scope.empinfo = [{firstName:'Alex',lastname:'G',email:'alex@gmail.com',mobile:'656186463'},
+	                   {firstName:'Prasu', lastname:'A',email:'prasu2gmail.com',mobile:'21656146'}];
+					   
+					  
+}
+});
+
+</script>
+</body>
+</html>

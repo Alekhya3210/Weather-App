@@ -1,0 +1,30 @@
+<!docytpe html>
+<html ng-App="myApp">
+<head>
+<title></title>
+</head>
+<body ng-controller="myCtrl">
+<input type="text" ng-model="name"/>
+<!--<span ng-bind="name"></span>-->
+<table>
+<tr>
+<td>First Name</td>
+<td>Last Name</td>
+</tr>
+<tr ng.repeat="name in names">
+   <td ng-bind="name.fname"></td>
+    <td ng-bind="name.lname"></td>
+</tr>
+</table>
+<input type="button" value="Click" ng-click="myfun();"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+<script>
+var myapp = angular.module("myApp",[]);
+myapp.controller("myCtrl",function ($scope){
+$scope.myfun = function (){
+     $scope.names = [{fname: "testname1",lname:"D"},{fname:"testname2",lname:"DH"}];
+}
+});
+</script>
+</body>
+</html>

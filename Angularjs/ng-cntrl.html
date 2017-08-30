@@ -1,0 +1,20 @@
+<!docytpe html>
+<html ng-App="myApp">
+<head>
+<title></title>
+</head>
+<body ng-controller="myCtrl">
+<input type="text" ng-model="name"/>
+<!--<span ng-bind="name"></span>-->
+<input type="button" value="click" ng-dblclick="myfun();"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+<script>
+var myapp=angular.module("myApp",[]);
+myapp.controller("myCtrl",function ($scope){
+$scope.myfun = function(){
+$scope.name = "this is 1st angular-js class";
+}
+});
+</script>
+</body>
+</html>
